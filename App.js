@@ -12,12 +12,13 @@ import {
   TextInput,
 } from 'react-native';
 //import LoginContainer from './src/components/container/login/LoginContainer';
-import RegisterContainer from './src/components/container/register/RegisterContainer';
+//import RegisterContainer from './src/components/container/register/RegisterContainer';
+import ListProductContainer from './src/components/container/listproduct/ListProductContainer';
 
 export default class App extends Component {
   render() {
     return (
-      <RegisterContainer />
+      <ListProductContainer />
     );
   }
 }
