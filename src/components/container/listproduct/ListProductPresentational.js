@@ -6,21 +6,49 @@ import {
     TouchableOpacity,
     KeyboardAvoidingView,
     Image,
-    ListView,
+    ScrollView,
 } from 'react-native';
 import styles from './ListProductStyles';
 
 const ListProductPresentational = () => (
 
-    <View style={styles.container}>
-        <TouchableOpacity style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.button}>
             <Image
-                style={styles.img}
                 source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+                style={styles.img}
             />
-            <Text style={styles.text}> Samsung</Text>
-        </TouchableOpacity>
-    </View>
+            <Text style={styles.text}> React Native</Text>
+        </View>
+        <View style={styles.button}>
+            <Image
+                source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+                style={styles.img}
+            />
+            <Text style={styles.text}> React Native</Text>
+        </View>
+        <View style={styles.button}>
+            <Image
+                source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+                style={styles.img}
+            />
+            <Text style={styles.text}> React Native</Text>
+        </View>
+        <View style={styles.button}>
+            <Image
+                source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+                style={styles.img}
+            />
+            <Text style={styles.text}> React Native</Text>
+        </View>
+        <View style={styles.button}>
+            <Image
+                source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+                style={styles.img}
+            />
+            <Text style={styles.text}> React Native</Text>
+        </View>
+    </ScrollView>
 )
 
 export default ListProductPresentational;

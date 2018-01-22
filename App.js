@@ -11,14 +11,14 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-//import LoginContainer from './src/components/container/login/LoginContainer';
+import LoginContainer from './src/components/container/login/LoginContainer';
 //import RegisterContainer from './src/components/container/register/RegisterContainer';
-import ListProductContainer from './src/components/container/listproduct/ListProductContainer';
-
+//import ListProductContainer from './src/components/container/listproduct/ListProductContainer';
+//import ProductContainer from './src/components/container/productaddinfo/ProductContainer';
 export default class App extends Component {
   render() {
     return (
-      <ListProductContainer />
+      <LoginContainer />
     );
   }
 }
