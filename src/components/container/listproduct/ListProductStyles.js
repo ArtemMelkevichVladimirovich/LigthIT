@@ -16,12 +16,14 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
         backgroundColor: '#F5F5DC',
-        margin: 6,
+        margin: 3,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     img: {
-        width: 70, height: 70
+        width: 100, 
+        height: 100,
+        borderRadius:20,
     },
     text:{
         paddingTop: 20,
