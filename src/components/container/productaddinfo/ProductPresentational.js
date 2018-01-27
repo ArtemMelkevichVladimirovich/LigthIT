@@ -11,15 +11,17 @@ import {
 } from 'react-native';
 import styles from './ProductStyles';
 
+
 const ProductPresentational = () => (
 
     <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.logoProduct}>
+       <View style={styles.logoProduct}>
             <Text style={styles.text}> React Native</Text>
             <Image
                 source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
                 style={styles.img}
             />
+
         </View>
 
         <View style={styles.form}>
@@ -28,7 +30,6 @@ const ProductPresentational = () => (
                 <Button style={{ padding: 10 }} title='Send' />
             </View>
             <TextInput style={{ marginLeft: 20, marginRight: 10 }} placeholder='Text...' />
-
         </View>
 
         <View style={styles.containerProduct}>

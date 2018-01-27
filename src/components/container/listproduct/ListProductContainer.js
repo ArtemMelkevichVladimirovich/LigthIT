@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
-import ListProductPresentational from './ListProductPresentational';
-import {
-    View,
-    ScrollView,
-    Text
-}
-    from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as actionsCreators from '../../../store/actions';
+import ListProductContainer from './ListProductPresentational'
 import styles from './ListProductStyles';
+
 class ListProductContainer extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             objectProducs: [],
         }
+    }
+
+    getStateStore(){
+        console.log('======' + this.props.state + '=======')
+    }
+    
+    showListProduct(product) {
+        return (
+            product.map((item, index) => {
+                return (
+                    <View key={index}>
+                        <TouchableOpacity onPress={ () => this.getStateStore()}>
+                            <Image
+                                source={{ uri: `http://smktesting.herokuapp.com/static/${item.img}` }}
+                                style={styles.img} />
+                            <Text style={styles.text}>{item.title}</Text>
+                        </TouchableOpacity>
+                    </View>
+                )
+            })
+        );
     }
 
     componentDidMount() {
@@ -32,25 +52,28 @@ class ListProductContainer extends Component {
         return this.state.objectProducs;
     }
 
-
-
     render() {
-        let product = this.getObjects();
         return (
-            <ScrollView contentContainerStyle={styles.container}>
+            <ScrollView>
                 {
-                    product.map((item, index) => {
-                        return (
-                            <ListProductPresentational
-                                key={index}
-                                name={item}
-                            />
-                        )
-                    })
+                    this.showListProduct(this.getObjects())
                 }
             </ScrollView>
         );
     }
 }
 
-export default ListProductContainer;
+
+function mapStateToProps(state){
+    return{
+        product: state.list
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return{
+        actions: bindActionCreators(actionsCreators, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListProductContainer);

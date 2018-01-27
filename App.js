@@ -5,20 +5,17 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
-import LoginContainer from './src/components/container/login/LoginContainer';
-//import RegisterContainer from './src/components/container/register/RegisterContainer';
-//import ListProductContainer from './src/components/container/listproduct/ListProductContainer';
-//import ProductContainer from './src/components/container/productaddinfo/ProductContainer';
+import MyApp from './src/components/container/main';
+import { Provider } from 'react-native';
+import store from './src/store/store';
 export default class App extends Component {
-  render() {
-    return (
-      <LoginContainer />
-    );
-  }
+
+    render() {
+        return (
+            <Provider store={store}>
+                <MyApp />
+            </Provider>
+        );
+    }
 }
+

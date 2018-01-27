@@ -14,7 +14,10 @@ const LoginPresentational = () => (
         <View style={styles.form}>
             <TextInput style={styles.field} placeholder='New username' />
             <TextInput style={styles.field} placeholder='Password' />
-            <TextInput style={styles.field} placeholder='Confirm password' />
+            <TextInput
+                style={styles.field} placeholder='Confirm password'
+                secureTextEntry={true}
+            />
             <TouchableOpacity style={styles.button}>
                 <Text> Register</Text>
             </TouchableOpacity>
